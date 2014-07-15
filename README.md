@@ -16,27 +16,31 @@ Examples
 
 Define settings with ``djes``:
 
-    import djes
-    
-    settings = djes.Settings()
-    settings['debug'] = True  # you don't have to use uppercase notation
-    settings.install(locals())
+```python
+import djes
+
+settings = djes.Settings()
+settings['debug'] = True  # you don't have to use uppercase notation
+settings.install(locals())
+```
 
 Different settings based on the ``DJES_MODE`` variable:
 
-    def production(settings):
-        settings['debug'] = False
-        
-    def developments(settings):
-        settings['debug'] = True
-       
-    import djes
-    
-    settings = djes.Settings()
-    
-    if djes.mode('prod'):
-        production(settings)
-    elif djes.mode('dev') or djes.is_local():
-        development(settings)
-    else:
-        raise ValueError('Invalid mode')
+```python
+def production(settings):
+    settings['debug'] = False
+  
+def developments(settings):
+    settings['debug'] = True
+ 
+import djes
+
+settings = djes.Settings()
+
+if djes.mode('prod'):
+    production(settings)
+elif djes.mode('dev') or djes.is_local():
+    development(settings)
+else:
+    raise ValueError('Invalid mode')
+```
