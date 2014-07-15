@@ -43,4 +43,6 @@ elif djes.mode('dev') or djes.is_local():
     development(settings)
 else:
     raise ValueError('Invalid mode')
+
+settings.install(locals())
 ```
