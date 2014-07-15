@@ -1,0 +1,4 @@
+djes
+====
+
+Django Easier Settings
